@@ -34,7 +34,7 @@ export default function Home() {
                 className="px-4 py-2 rounded-full border border-gray-300 w-full sm:w-64 text-sm outline-none"
               />
               <button className="bg-gray-900 text-white rounded-full px-6 py-2 text-sm font-medium">
-                Kirim Email
+                Stay Updated
               </button>
             </div>
           </div>
