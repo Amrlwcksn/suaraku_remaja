@@ -1,6 +1,7 @@
 'use client';
 
 import { motion } from 'framer-motion';
+import Link from 'next/link';
 
 export default function Home() {
   return (
@@ -63,18 +64,24 @@ export default function Home() {
               desc: "Kumpulan cerita 4P: Pendapat, Pengalaman, Perasaan, dan Permasalahan yang kalian alami.",
               icon: "📘",
               color: "blue",
+              btnColor: "bg-blue-500 hover:bg-blue-600 hover:cursor-pointer",
+              link: "./titipan_cerita",
             },
             {
               title: "Remaja Sehat",
               desc: "Artikel, tips & tricks tentang kesehatan remaja",
               icon: "💡",
               color: "yellow",
+              btnColor: "bg-yellow-500 hover:bg-yellow-600",
+              link:"./remaja_sehat",
             },
             {
               title: "Ruang Bercerita",
               desc: "Ruang bagi kalian untuk curhat, berbagi inspirasi dan terbuka tentang keluh kesah dan pengalaman hidup kalian.",
               icon: "🧠",
               color: "pink",
+              btnColor: "bg-pink-500 hover:bg-pink-600",
+              link:"./ruang_bercerita",
             },
           ].map((item, i) => (
             <motion.div
@@ -91,11 +98,12 @@ export default function Home() {
               <div className="p-6 text-left">
                 <h2 className="text-xl font-semibold text-gray-900 mb-3">{item.title}</h2>
                 <p className="text-gray-600 mb-5">{item.desc}</p>
-                <button
-                  className={`bg-${item.color}-500 hover:bg-${item.color}-600 text-white px-6 py-3 rounded-xl font-medium transition`}
-                >
-                  Learn More
-                </button>
+                <Link href={item.link}>
+                  <button className={`${item.btnColor} text-white px-6 py-3 rounded-xl font-medium transition hover:cursor-pointer`}>
+                    Learn More
+                  </button>
+                </Link>
+
               </div>
             </motion.div>
           ))}
